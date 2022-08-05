@@ -1,14 +1,14 @@
 const express = require('express');
 const app = express();
 
+require('./model/dbConfig');
+
 const PORT = '5000';
+
+app.use(express.json());
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
-});
-
-
-app.get('/', (req, res) => {
-    res.status(200).send('Response is 200');
-    res.send('Hello World!');
 });
